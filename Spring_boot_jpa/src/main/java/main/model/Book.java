@@ -11,8 +11,11 @@ public class Book implements Serializable {
     @GeneratedValue
     @Column(name = "bookId")
     private Long id;
+    @Column(unique = true, nullable = false, length = 13)
     private String isbn;
+    @Column(unique = true)
     private String title;
+    @Column(unique = true)
     private String author;
 
     Book() {}
