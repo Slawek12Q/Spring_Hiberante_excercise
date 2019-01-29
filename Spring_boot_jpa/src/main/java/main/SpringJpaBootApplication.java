@@ -18,6 +18,6 @@ public class SpringJpaBootApplication {
 
         Book foundBook = dao.get(1L);
         System.out.println(foundBook);
-        Thread.sleep(5000);
+   //     Thread.sleep(5000);
     }
 }
