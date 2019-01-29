@@ -16,8 +16,16 @@ public class SpringJpaBootApplication {
         Book book = new Book("1234567890468", "Spring is so cool", "Slawek");
         dao.save(book);
 
+        Book book2 = new Book("1234567820468", "Spring is so cool", "Slawek");
+        book2.setId(1L);
+        dao.update(book2);
+
+
+
         Book foundBook = dao.get(1L);
         System.out.println(foundBook);
-   //     Thread.sleep(5000);
+
+        dao.remove(1L);
+
     }
 }

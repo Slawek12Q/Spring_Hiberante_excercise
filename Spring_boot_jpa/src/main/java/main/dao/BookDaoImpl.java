@@ -28,4 +28,17 @@ public class BookDaoImpl implements BookDao {
         Book book = entityManager.find(Book.class, id);
         return book;
     }
+
+    @Override
+    @Transactional
+    public void update (Book book){
+        entityManager.merge(book);
+    }
+
+    @Override
+    @Transactional
+    public void remove(Long bookId) {
+        Book objToRemove = entityManager.find(Book.class, bookId);
+        entityManager.remove(objToRemove);
+    }
 }
