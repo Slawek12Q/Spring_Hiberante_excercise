@@ -1,4 +1,4 @@
-package spring_mvn.example.practise;
+package main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
