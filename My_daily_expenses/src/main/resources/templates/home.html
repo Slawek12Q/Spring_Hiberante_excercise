@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Time tracker</title>
+</head>
+<body>
+<h1>Time registration</h1>
+<form action="#" method="post" th:action="@{/save}" th:object="${timeData}">
+    <p>Price which you spent: <input type="text" th:field="*{price}" /></p>
+    <p>Product which you buy and descriptions: <input type="text" th:field="*{description}" /></p>
+
+    <input type="submit" value="Save" />
+</form>
+<a th:href="@{/show}">Show all times</a>
+</body>
+</html>

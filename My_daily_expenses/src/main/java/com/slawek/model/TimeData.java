@@ -2,6 +2,7 @@ package com.slawek.model;
 
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 public class TimeData {
@@ -10,13 +11,15 @@ public class TimeData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String price;
-    private String decription;
+    private String description;
+    private LocalDateTime localDateTime;
 
-    TimeData(){}
+    public TimeData(){}
 
-    public TimeData(String price, String decription) {
+    public TimeData(String price, String description) {
         this.price = price;
-        this.decription = decription;
+        this.description = description;
+        this.localDateTime = LocalDateTime.now();
     }
 
     public int getId() {
@@ -27,8 +30,12 @@ public class TimeData {
         return price;
     }
 
-    public String getDecription() {
-        return decription;
+    public String getDescription() {
+        return description;
+    }
+
+    public LocalDateTime getLocalDateTime() {
+        return localDateTime;
     }
 
     public void setId(int id) {
@@ -39,7 +46,11 @@ public class TimeData {
         this.price = price;
     }
 
-    public void setDecription(String decription) {
-        this.decription = decription;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setLocalDateTime(LocalDateTime localDateTime) {
+        this.localDateTime = localDateTime;
     }
 }
